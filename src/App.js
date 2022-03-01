@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import CardUI from './cmponent/CardUI'
+
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-function App() {
+const App =() => {
+  const cardInfo = [
+    {   images: 'img/student-gd94402e11_1280.jpg',
+        title: 'Card title',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, animi? Voluptas rem fugiat error quod eveniet numquam incidunt sed quaerat?',
+    },
+    {
+      images: 'img/office-g19943ba37_1280.jpg',
+      title: 'Card title',
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, animi? Voluptas rem fugiat error quod eveniet numquam incidunt sed quaerat?',
+  },
+  { images:'img/telework-g6e883de3b_1280.jpg',
+    title: 'Card title',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, animi? Voluptas rem fugiat error quod eveniet numquam incidunt sed quaerat?',
+}
+]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {cardInfo.map((card, index) =>{
+       return <CardUI key={index} card={card}/>
+      
+      })}
+   
     </div>
   );
 }
